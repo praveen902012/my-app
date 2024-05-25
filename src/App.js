@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-
+import ReactGA from 'react-ga';
+const TRACKING_ID = "G-0DLEPE47ZD"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
 function App() {
     return (
     <div className="App">

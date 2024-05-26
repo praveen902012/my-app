@@ -15,10 +15,10 @@ export default function Home(){
         <div>
             <h3>Home Page</h3>
             <div>
-                <a href="#" onClick={()=>gaEventTracker('call')}>Home page</a>
+                <a href="#" >Home page</a>
             </div>
             <div>
-                <a href="mailto:someone@example.com" onLoad={()=>gaEventTracker('email')}>Write to us</a>
+                <a href="mailto:someone@example.com" >Write to us</a>
             </div>
         </div>
     )

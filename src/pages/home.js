@@ -1,5 +1,4 @@
 
-import useAnalyticsEventTracker from '../component/useAnalyticsEventTracker';
 import ReactGA from "react-analytics-ga4";
 export default function Home(){
     ReactGA.event({

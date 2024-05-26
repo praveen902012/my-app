@@ -7,6 +7,9 @@ import ReactGA from 'react-ga';
 const TRACKING_ID = "G-0DLEPE47ZD"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID);
 export default function App(){
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, []);
     return (
         <div>
             <Router>

@@ -5,13 +5,18 @@ import  About from './pages/about'
 import  Contactus from './pages/contactus'
 import ReactGA from 'react-ga';
 const TRACKING_ID = "G-0DLEPE47ZD"; // OUR_TRACKING_ID
-ReactGA.initialize(TRACKING_ID);
+ReactGA.initialize(TRACKING_ID,{ debug: true });
 export default function App(){
     useEffect(() => {
         ReactGA.pageview(window.location.pathname + window.location.search);
     }, []);
     return (
         <div>
+            <menu>
+                <a href={"/home"}>Home</a>
+                <a href={"/about"}>About</a>
+                <a href={"/contactus"}>Contact Us</a>
+            </menu>
             <Router>
                 <Routes>
                     <Route index element={<Home/>}></Route>

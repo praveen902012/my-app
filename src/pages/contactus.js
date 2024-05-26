@@ -1,8 +1,8 @@
-import useAnalyticsEventTracker from './component/useAnalyticsEventTracker';
 
-const ContactUs = () => {
+import useAnalyticsEventTracker from '../component/useAnalyticsEventTracker';
+export default function Contact(){
     const gaEventTracker = useAnalyticsEventTracker('Contact us');
-    return(
+    return (
         <div>
             <h3>Contact Us</h3>
             <div>
@@ -11,6 +11,6 @@ const ContactUs = () => {
             <div>
                 <a href="mailto:someone@example.com" onClick={()=>gaEventTracker('email')}>Write to us</a>
             </div>
-        </div>)
-};
-export default ContactUs
+        </div>
+    )
+}

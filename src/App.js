@@ -1,44 +1,23 @@
 import React, {useEffect } from 'react';
-import ReactDOM from 'react-dom';
-import ReactGA from 'react-ga';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-const TRACKING_ID = "G-0DLEPE47ZD"; // OUR_TRACKING_ID
+import  Home from './pages/home'
+import  About from './pages/about'
+import  Contactus from './pages/contactus'
 
-ReactGA.initialize(TRACKING_ID);
 
-const ContactUs = () => (
-    <div>
-      <h3>Contact Us</h3>
-    </div>
-);
 
-const Home = () => (
-    <div>
-      <h2>Home</h2>
-    </div>
-);
-
-const About = () => (
-    <div>
-      <h2>About</h2>
-    </div>
-);
-
-const App = () => {
-
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
-
-  return (
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contactus" element={<ContactUs />} />
-        </Routes>
-      </Router>
-  );
+export default function App(){
+    return (
+        <div>
+            <Router>
+                <Routes>
+                    <Route index element={<Home/>}></Route>
+                    <Route path="/home" element={<Home/>}></Route>
+                    <Route path="/about" element={<About/>}></Route>
+                    <Route path="/contactus" element={<Contactus/>}></Route>
+                </Routes>
+            </Router>
+        </div>
+    )
 }
 
-export default App;

@@ -9,19 +9,6 @@ ReactGA.initialize(TRACKING_ID,{ debug: true });
 export default function App(){
     useEffect(() => {
         ReactGA.pageview(window.location.pathname + window.location.search);
-        // Send pageview with a custom path
-
-
-// Send a custom event
-        ReactGA.event({
-            category: "your category",
-            action: "your action",
-            label: "your label", // optional
-            value: 99, // optional, must be a number
-            nonInteraction: true, // optional, true/false
-            transport: "xhr", // optional, beacon/xhr/image
-        });
-        ReactGA.send({ hitType: "pageview", page: "/my-path", title: "Custom Title" });
 
     }, []);
     return (

@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import  Home from './pages/home'
 import  About from './pages/about'
 import  Contactus from './pages/contactus'
-
-
-
+import ReactGA from 'react-ga';
+const TRACKING_ID = "G-0DLEPE47ZD"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
 export default function App(){
     return (
         <div>

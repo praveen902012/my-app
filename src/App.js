@@ -8,9 +8,9 @@ const TRACKING_ID = "G-0DLEPE47ZD"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID,{ debug: true });
 export default function App(){
     useEffect(() => {
-        //ReactGA.pageview(window.location.pathname + window.location.search);
+        ReactGA.pageview(window.location.pathname + window.location.search);
         // Send pageview with a custom path
-        ReactGA.send({ hitType: "pageview", page: "/my-path", title: "Custom Title" });
+
 
 // Send a custom event
         ReactGA.event({
@@ -21,6 +21,7 @@ export default function App(){
             nonInteraction: true, // optional, true/false
             transport: "xhr", // optional, beacon/xhr/image
         });
+        ReactGA.send({ hitType: "pageview", page: "/my-path", title: "Custom Title" });
 
     }, []);
     return (

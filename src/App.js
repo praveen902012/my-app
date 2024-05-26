@@ -3,12 +3,25 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import  Home from './pages/home'
 import  About from './pages/about'
 import  Contactus from './pages/contactus'
-import ReactGA from 'react-ga';
+import ReactGA from "react-analytics-ga4";
 const TRACKING_ID = "G-0DLEPE47ZD"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID,{ debug: true });
 export default function App(){
     useEffect(() => {
-        ReactGA.pageview(window.location.pathname + window.location.search);
+        //ReactGA.pageview(window.location.pathname + window.location.search);
+        // Send pageview with a custom path
+        ReactGA.send({ hitType: "pageview", page: "/my-path", title: "Custom Title" });
+
+// Send a custom event
+        ReactGA.event({
+            category: "your category",
+            action: "your action",
+            label: "your label", // optional
+            value: 99, // optional, must be a number
+            nonInteraction: true, // optional, true/false
+            transport: "xhr", // optional, beacon/xhr/image
+        });
+
     }, []);
     return (
         <div>

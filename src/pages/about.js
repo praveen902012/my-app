@@ -1,8 +1,13 @@
 
-import useAnalyticsEventTracker from '../component/useAnalyticsEventTracker';
+import {useEffect} from "react";
+import ReactGA from "react-analytics-ga4";
 export default function Contact(){
-    const gaEventTracker = useAnalyticsEventTracker('About us page');
-
+    useEffect(() => {
+        ReactGA.event({
+            category: 'Page',
+            action: 'About Page'
+        });
+    }, []);
     return (
         <div>
             <h3>About Us</h3>

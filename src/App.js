@@ -7,10 +7,6 @@ import ReactGA from "react-analytics-ga4";
 const TRACKING_ID = "G-0DLEPE47ZD"; // OUR_TRACKING_ID
 ReactGA.initialize(TRACKING_ID,{ debug: true });
 export default function App(){
-    useEffect(() => {
-
-
-    }, []);
     return (
         <div>
             <menu>
